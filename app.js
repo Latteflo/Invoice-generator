@@ -1,29 +1,3 @@
-
-function setColor(clicked_id) {
-    let element = document.querySelector("#" + clicked_id)
-    let style = window.getComputedStyle(element)
-    let bgc = style.background
-    let c = style.color
-  
-    document.querySelector(":root").style.setProperty("--emphasis-color", c)
-    document.querySelector(":root").style.setProperty("--button-color", bgc)
-  }
-  
-  function setMode(clicked_id) {
-    if (clicked_id === "light") {
-      document
-        .querySelector(":root")
-        .style.setProperty("--background-color", "#ECFDF5")
-      document.querySelector(":root").style.setProperty("--text-color", "#1F2937")
-    } else if (clicked_id === "dark") {
-      document
-        .querySelector(":root")
-        .style.setProperty("--background-color", "#1F2937")
-      document.querySelector(":root").style.setProperty("--text-color", "#D5D4D8")
-    }
-  }
-  
-  
  let tasks = []
   let price = 0
   let washCarBtn = document.getElementById("wash-car")
@@ -33,6 +7,26 @@ function setColor(clicked_id) {
   let notesEl = document.getElementById("notes-el")
   let totalPriceEl = document.getElementById("total-price")
   let clearBtn = document.getElementById("clear")
+
+
+  washCarBtn.addEventListener("click", function() {
+    addToTasks("Wash Car", 10)
+  })
+  
+  mowLawnBtn.addEventListener("click", function(){
+    addToTasks("Mow Lawn", 20)
+  })
+  
+  pullWeedsBtn.addEventListener("click", function(){
+    addToTasks("Pull Weeds", 30)
+  })
+  
+  clearBtn.addEventListener("click", function(){
+    tasks = []
+    price = 0
+    displayTasks()
+  }) 
+
   
   function displayTasks() {
     let tempTaskList = ""
@@ -78,20 +72,29 @@ function setColor(clicked_id) {
   }
   
   
-  washCarBtn.addEventListener("click", function() {
-    addToTasks("Wash Car", 10)
-  })
+
+
+function setColor(clicked_id) {
+    let element = document.querySelector("#" + clicked_id)
+    let style = window.getComputedStyle(element)
+    let bgc = style.background
+    let c = style.color
   
-  mowLawnBtn.addEventListener("click", function(){
-    addToTasks("Mow Lawn", 20)
-  })
+    document.querySelector(":root").style.setProperty("--emphasis-color", c)
+    document.querySelector(":root").style.setProperty("--button-color", bgc)
+  }
   
-  pullWeedsBtn.addEventListener("click", function(){
-    addToTasks("Pull Weeds", 30)
-  })
+  function setMode(clicked_id) {
+    if (clicked_id === "light") {
+      document
+        .querySelector(":root")
+        .style.setProperty("--background-color", "#ECFDF5")
+      document.querySelector(":root").style.setProperty("--text-color", "#1F2937")
+    } else if (clicked_id === "dark") {
+      document
+        .querySelector(":root")
+        .style.setProperty("--background-color", "#1F2937")
+      document.querySelector(":root").style.setProperty("--text-color", "#D5D4D8")
+    }
+  }
   
-  clearBtn.addEventListener("click", function(){
-    tasks = []
-    price = 0
-    displayTasks()
-  }) 
