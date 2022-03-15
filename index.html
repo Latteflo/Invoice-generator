@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script
+    src="https://kit.fontawesome.com/742b021d68.js"
+    crossorigin="anonymous"
+  ></script>
+</head>
+ <body>
+        <div class="container">     
+         <div class="modes">
+        <button onclick="setMode(this.id)" id="light">LIGHT</button>
+        <button onclick="setMode(this.id)" id="dark">DARK</button>
+      </div>
+      <div class="color">
+        <button onclick="setColor(this.id)" id="purple"></button>
+        <button onclick="setColor(this.id)" id="cyan"></button>
+        <button onclick="setColor(this.id)" id="green"></button>
+        <button onclick="setColor(this.id)" id="yellow"></button>
+        <button onclick="setColor(this.id)" id="red"></button>
+      </div>
+ 
+          <div class="title-area">
+            <h1>Invoice creator</h1>
+            <p class="subheads">Thanks for choosing GoodCorp, LLC!</p>
+          </div>
+          <div class="contents-area"> 
+            <div class="cols">
+              <button id="wash-car" class="service-btn">Wash Car: $10</button>
+              <button id="mow-lawn" class="service-btn btn-secondary">Mow Lawn: $20</button>
+              <button id="pull-weeds" class="service-btn btn-secondary">Pull Weeds: $30</button>
+            </div>
+            <div class="cols">
+              <p class="left-align">TASK</p>
+              <p class="right-align">TOTAL</p>
+            </div>
+            <div id="task-list" class="tasks"></div>
+            <hr>
+            <div class="cols">
+              <p class="left-align">NOTES</p>
+              <p class="right-align">TOTAL AMOUNT</p>
+            </div>
+            <div class="cols">
+              <p id="notes-el" class="left-align notes"></p>
+              <p id="total-price" class="right-total">$0</p>
+            </div>
+            <button id="clear" class="submit-btn">
+              <i class="fa-solid fa-envelope"></i>&emsp;Send invoice
+            </button>    
+          </div>
+    <script src="app.js"></script>
+</body>
+</html>
