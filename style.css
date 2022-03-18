@@ -107,7 +107,7 @@ html, body {
   }
   
   .submit-btn:hover {
-    background-color: #3B70E5;
+    background-color: var(--emphasis-color);
   }
   
   .task-list {
